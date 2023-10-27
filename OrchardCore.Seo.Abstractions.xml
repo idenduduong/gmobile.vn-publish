@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OrchardCore.Seo.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="M:OrchardCore.Seo.IRobotsProvider.GetContentAsync">
+            <summary>
+            Provides a way to contribute to the content of the robots.txt file.
+            </summary>
+            <returns>Content to add to the robots.txt file.</returns>
+        </member>
+    </members>
+</doc>

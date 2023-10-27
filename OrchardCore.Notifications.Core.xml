@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OrchardCore.Notifications.Core</name>
+    </assembly>
+    <members>
+        <member name="P:OrchardCore.Notifications.Indexes.NotificationIndex.Content">
+            <summary>
+            The Content column should only be used to search the content of a notification.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Notifications.Models.NotificationBodyInfo.Summary">
+            <summary>
+            The summary or subject of the notification.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Notifications.Models.NotificationBodyInfo.TextBody">
+            <summary>
+            The text body of the notification.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Notifications.Models.NotificationBodyInfo.HtmlBody">
+            <summary>
+            The html body of the notification.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Notifications.Models.NotificationReadInfo.IsRead">
+            <summary>
+            Whether or not the notification is read.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Notifications.Models.NotificationReadInfo.ReadAtUtc">
+            <summary>
+            The date and time when the notification was read.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Notifications.Models.UserNotificationPreferencesPart.Methods">
+            <summary>
+            Sorted methods.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Notifications.Models.UserNotificationPreferencesPart.Optout">
+            <summary>
+            List of methods the user does not want to use.
+            </summary>
+        </member>
+    </members>
+</doc>

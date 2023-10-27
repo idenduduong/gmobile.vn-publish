@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OrchardCore.Media.Azure</name>
+    </assembly>
+    <members>
+        <member name="P:OrchardCore.Media.Azure.MediaBlobStorageOptions.CreateContainer">
+            <summary>
+            Create blob container on startup if it does not exist.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Media.Azure.MediaBlobStorageOptions.RemoveContainer">
+            <summary>
+            Remove blob container on tenant removal if it exists.
+            </summary>
+        </member>
+    </members>
+</doc>

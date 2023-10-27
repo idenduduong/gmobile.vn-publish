@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OrchardCore.Notifications.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:OrchardCore.Notifications.INotificationEvents">
+            <summary>
+            Represents a contract for notification events.
+            </summary>
+        </member>
+        <member name="M:OrchardCore.Notifications.INotificationEvents.CreatingAsync(OrchardCore.Notifications.NotificationContext)">
+            <summary>
+            Occurs before the notification is created.
+            </summary>
+            <param name="context">The <see cref="T:OrchardCore.Notifications.NotificationContext"/>.</param>
+        </member>
+        <member name="M:OrchardCore.Notifications.INotificationEvents.CreatedAsync(OrchardCore.Notifications.NotificationContext)">
+            <summary>
+            Occurs after the notification is created.
+            </summary>
+            <param name="context">The <see cref="T:OrchardCore.Notifications.NotificationContext"/>.</param>
+        </member>
+        <member name="M:OrchardCore.Notifications.INotificationEvents.SendingAsync(OrchardCore.Notifications.INotificationMethodProvider,OrchardCore.Notifications.NotificationContext)">
+            <summary>
+            Occurs before the notification is sent.
+            </summary>
+            <param name="provider">The <see cref="T:OrchardCore.Notifications.INotificationMethodProvider"/>.</param>
+            <param name="context">The <see cref="T:OrchardCore.Notifications.NotificationContext"/>.</param>
+        </member>
+        <member name="M:OrchardCore.Notifications.INotificationEvents.SentAsync(OrchardCore.Notifications.INotificationMethodProvider,OrchardCore.Notifications.NotificationContext)">
+            <summary>
+            Occurs after the notification is sent.
+            </summary>
+            <param name="provider">The <see cref="T:OrchardCore.Notifications.INotificationMethodProvider"/>.</param>
+            <param name="context">The <see cref="T:OrchardCore.Notifications.NotificationContext"/>.</param>
+        </member>
+        <member name="M:OrchardCore.Notifications.INotificationEvents.FailedAsync(OrchardCore.Notifications.INotificationMethodProvider,OrchardCore.Notifications.NotificationContext)">
+            <summary>
+            Occurs when the notification is failed.
+            </summary>
+            <param name="provider">The <see cref="T:OrchardCore.Notifications.INotificationMethodProvider"/>.</param>
+            <param name="context">The <see cref="T:OrchardCore.Notifications.NotificationContext"/>.</param>
+        </member>
+        <member name="M:OrchardCore.Notifications.INotificationEvents.SendingAsync(OrchardCore.Notifications.NotificationContext)">
+            <summary>
+            Occurs before the notification is sent.
+            </summary>
+            <param name="context">The <see cref="T:OrchardCore.Notifications.NotificationContext"/>.</param>
+        </member>
+        <member name="M:OrchardCore.Notifications.INotificationEvents.SentAsync(OrchardCore.Notifications.NotificationContext)">
+            <summary>
+            Occurs after the notification is sent.
+            </summary>
+            <param name="context">The <see cref="T:OrchardCore.Notifications.NotificationContext"/>.</param>
+        </member>
+        <member name="T:OrchardCore.Notifications.INotificationMessage">
+            <summary>
+            Represents a contract for notification message information.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Notifications.INotificationMessage.Summary">
+            <summary>
+            Gets the message summary.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Notifications.INotificationMessage.TextBody">
+            <summary>
+            Gets the plain message body.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Notifications.INotificationMessage.HtmlBody">
+            <summary>
+            Gets the HTML message body.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Notifications.INotificationMessage.IsHtmlPreferred">
+            <summary>
+            Gets whether HTML is preferred for the message body.
+            </summary>
+        </member>
+        <member name="T:OrchardCore.Notifications.INotificationMethodProvider">
+            <summary>
+            Represents a contract for a notification provider.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Notifications.INotificationMethodProvider.Method">
+            <summary>
+            Gets the provider name.
+            </summary>
+            <remarks>The name should be unique.</remarks>
+        </member>
+        <member name="P:OrchardCore.Notifications.INotificationMethodProvider.Name">
+            <summary>
+            Gets a localized name for the method.
+            </summary>
+        </member>
+        <member name="M:OrchardCore.Notifications.INotificationMethodProvider.TrySendAsync(System.Object,OrchardCore.Notifications.INotificationMessage)">
+            <summary>
+            Attempts to send the given message to the given notifiable object.
+            </summary>
+            <param name="notify">The notifiable object.</param>
+            <param name="message">The <see cref="T:OrchardCore.Notifications.INotificationMessage"/>.</param>
+            <returns><c>true</c> when the message was successfully sent otherwise <c>false</c>.</returns>
+        </member>
+        <member name="T:OrchardCore.Notifications.INotificationMethodProviderAccessor">
+            <summary>
+            Represents a contract for accessing the <see cref="T:OrchardCore.Notifications.INotificationMethodProvider"/>.
+            </summary>
+        </member>
+        <member name="M:OrchardCore.Notifications.INotificationMethodProviderAccessor.GetProvidersAsync(System.Object)">
+            <summary>
+            Gets the registered notification method providers.
+            </summary>
+            <param name="notify">The notifiable object.</param>
+            <returns>A list of <see cref="T:OrchardCore.Notifications.INotificationMethodProvider"/>.</returns>
+        </member>
+        <member name="T:OrchardCore.Notifications.INotificationService">
+            <summary>
+            Contract for notification service.
+            </summary>
+        </member>
+        <member name="M:OrchardCore.Notifications.INotificationService.SendAsync(System.Object,OrchardCore.Notifications.INotificationMessage)">
+            <summary>
+            Attempts to send the given message to the given notifiable object.
+            </summary>
+            <param name="notify">The notifiable object.</param>
+            <param name="message">The message to be sent.</param>
+            <returns>The number of messages that were successfully sent to the user.</returns>
+        </member>
+        <member name="T:OrchardCore.Notifications.Notification">
+            <summary>
+            Represents a notification entity.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Notifications.Notification.NotificationId">
+            <summary>
+            Gets or sets the notification Id.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Notifications.Notification.Summary">
+            <summary>
+            Gets or sets the notification summary.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Notifications.Notification.UserId">
+            <summary>
+            Gets or sets the user id who caused the event to occur.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Notifications.Notification.CreatedUtc">
+            <summary>
+            Gets or sets the date and time when the event occurred.
+            </summary>
+        </member>
+        <member name="T:OrchardCore.Notifications.NotificationContext">
+            <summary>
+            Represents a context for notification.
+            </summary>
+        </member>
+        <member name="M:OrchardCore.Notifications.NotificationContext.#ctor(OrchardCore.Notifications.INotificationMessage,System.Object)">
+            <summary>
+            Creates a new instance of <see cref="T:OrchardCore.Notifications.NotificationContext"/>.
+            </summary>
+            <param name="notificationMessage">The notification message.</param>
+            <param name="notify">The notifiable object.</param>
+            <exception cref="T:System.ArgumentNullException">Occurs when <paramref name="notificationMessage"/> is <c>null</c>,</exception>
+        </member>
+        <member name="P:OrchardCore.Notifications.NotificationContext.Notification">
+            <summary>
+            Gets ot sets the notification.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Notifications.NotificationContext.NotificationMessage">
+            <summary>
+            Gets or sets the notification message.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Notifications.NotificationContext.Notify">
+            <summary>
+            Gets or sets the notifiable object.
+            </summary>
+        </member>
+    </members>
+</doc>

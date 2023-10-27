@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OrchardCore.Sms.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="P:OrchardCore.Sms.ISmsProvider.Name">
+            <summary>
+            The name of the provider.
+            </summary>
+        </member>
+        <member name="M:OrchardCore.Sms.ISmsProvider.SendAsync(OrchardCore.Sms.SmsMessage)">
+            <summary>
+            Send the given message.
+            </summary>
+            <param name="message">The message to send.</param>
+            <returns>SmsResult object</returns>
+        </member>
+        <member name="P:OrchardCore.Sms.SmsMessage.To">
+            <summary>
+            The phone number to send the message to.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Sms.SmsMessage.Body">
+            <summary>
+            The body of the message to send.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Sms.SmsProviderOptions.Providers">
+            <summary>
+            This read-only collections contains all registered SMS providers.
+            The 'Key' is the technical name of the provider.
+            The 'Value' is the type of the SMS provider. The type will awalys be an implementation of <see cref="T:OrchardCore.Sms.ISmsProvider"></see> interface.
+            </summary>
+        </member>
+        <member name="M:OrchardCore.Sms.SmsProviderOptions.TryAddProvider(System.String,System.Type)">
+            <summary>
+            Adds a provider if one does not exist.
+            </summary>
+            <param name="name">The technical name of the provider.</param>
+            <param name="type">The type of the provider.</param>
+            <returns cref="T:OrchardCore.Sms.SmsProviderOptions"></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:OrchardCore.Sms.SmsProviderOptions.RemoveProvider(System.String)">
+            <summary>
+            Removes a provider if one exist.
+            </summary>
+            <param name="name">The technical name of the provider.</param>
+            <returns cref="T:OrchardCore.Sms.SmsProviderOptions"></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:OrchardCore.Sms.SmsProviderOptions.ReplaceProvider(System.String,System.Type)">
+            <summary>
+            Replaces existing or adds a new provider.
+            </summary>
+            <param name="name">The technical name of the provider.</param>
+            <param name="type">The type of the provider.</param>
+            <returns cref="T:OrchardCore.Sms.SmsProviderOptions"></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="P:OrchardCore.Sms.SmsResult.Success">
+            <summary>
+            Returns an <see cref="T:OrchardCore.Sms.SmsResult"/> indicating a successful SMS operation.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Sms.SmsResult.Errors">
+            <summary>
+            An <see cref="T:System.Collections.Generic.IEnumerable`1"/> containing an errors that occurred during the SMS operation.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Sms.SmsResult.Response">
+            <summary>
+            Get or sets the response text from the SMS server.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Sms.SmsResult.Succeeded">
+            <summary>
+            Whether the operation succeeded or not.
+            </summary>
+        </member>
+        <member name="M:OrchardCore.Sms.SmsResult.Failed(Microsoft.Extensions.Localization.LocalizedString[])">
+            <summary>
+            Creates an <see cref="T:OrchardCore.Sms.SmsResult"/> indicating a failed SMS operation, with a list of errors if applicable.
+            </summary>
+            <param name="errors">An optional array of <see cref="T:Microsoft.Extensions.Localization.LocalizedString"/> which caused the operation to fail.</param>
+        </member>
+        <member name="F:OrchardCore.Sms.SmsSettings.GroupId">
+            <summary>
+            The group identifier for configuring drivers.
+            </summary>
+        </member>
+        <member name="P:OrchardCore.Sms.SmsSettings.DefaultProviderName">
+            <summary>
+            The name of the SMS provider to use.
+            </summary>
+        </member>
+    </members>
+</doc>

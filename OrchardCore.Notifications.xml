@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OrchardCore.Notifications</name>
+    </assembly>
+    <members>
+        <member name="M:OrchardCore.Notifications.Drivers.NotifyUserTaskActivityDisplayDriver`2.EditActivityAsync(`0,`1)">
+            <summary>
+            Edit the view model before it's used in the editor.
+            </summary>
+        </member>
+        <member name="M:OrchardCore.Notifications.Drivers.NotifyUserTaskActivityDisplayDriver`2.EditActivity(`0,`1)">
+            <summary>
+            Edit the view model before it's used in the editor.
+            </summary>
+        </member>
+        <member name="M:OrchardCore.Notifications.Drivers.NotifyUserTaskActivityDisplayDriver`2.UpdateActivityAsync(`1,`0)">
+            <summary>
+            Updates the activity when the view model is validated.
+            </summary>
+        </member>
+        <member name="M:OrchardCore.Notifications.Drivers.NotifyUserTaskActivityDisplayDriver`2.UpdateActivity(`1,`0)">
+            <summary>
+            Updates the activity when the view model is validated.
+            </summary>
+        </member>
+    </members>
+</doc>
